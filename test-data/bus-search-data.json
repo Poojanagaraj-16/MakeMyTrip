@@ -1,0 +1,20 @@
+{
+  "validSearch": {
+    "source": "Bangalore",
+    "destination": "Chennai"
+  },
+  "sourceSuggestions": {
+    "partialSource": "Banga",
+    "expectedSource": "Bangalore"
+  },
+  "destinationSuggestions": {
+    "source": "Bangalore",
+    "partialDestination": "Chen",
+    "expectedDestination": "Chennai"
+  },
+  "sameCity": {
+    "source": "Bangalore",
+    "destination": "Bangalore"
+  },
+  "travelDateOffsetDays": 30
+}

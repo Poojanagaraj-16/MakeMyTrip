@@ -1,0 +1,27 @@
+{
+  "name": "makemytrip-bus-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Microsoft Edge-only Playwright automation for MakeMyTrip bus search",
+  "scripts": {
+    "test": "playwright test --project=\"Microsoft Edge\"",
+    "test:tc001": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_001",
+    "test:tc002": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_002",
+    "test:tc003": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_003",
+    "test:tc004": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_004",
+    "test:tc005": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_005",
+    "test:tc006": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_006",
+    "test:tc007": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_007",
+    "test:tc008": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_008",
+    "test:tc009": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_009",
+    "test:tc010": "playwright test --project=\"Microsoft Edge\" --grep TC_BUS_010",
+    "test:debug": "playwright test --project=\"Microsoft Edge\" --debug",
+    "report:open": "powershell -NoProfile -Command \"Start-Process (Resolve-Path 'reports/custom-report.html')\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}

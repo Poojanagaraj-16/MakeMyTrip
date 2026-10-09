@@ -1,0 +1,219 @@
+{
+  "project": "MakeMyTrip Bus Automation",
+  "browser": "Microsoft Edge",
+  "startTime": "2026-10-09T17:31:47.071Z",
+  "endTime": "2026-10-09T17:35:05.473Z",
+  "durationMs": 198402,
+  "status": "passed",
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "blocked": 0,
+    "passPercentage": "100.0%"
+  },
+  "tests": [
+    {
+      "id": "TC_BUS_001",
+      "requirementId": "REQ_BUS_01",
+      "title": "Search bus with valid source city, destination city, and future travel date",
+      "status": "passed",
+      "duration": 19024,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 19024,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_002",
+      "requirementId": "REQ_BUS_01",
+      "title": "Verify source city auto-suggestions are displayed while entering source city ",
+      "status": "passed",
+      "duration": 11945,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 11945,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_003",
+      "requirementId": "REQ_BUS_01",
+      "title": "Verify destination city auto-suggestions are displayed while entering destination city ",
+      "status": "passed",
+      "duration": 12969,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 12969,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_004",
+      "requirementId": "REQ_BUS_01",
+      "title": "Verify warning message when source and destination cities are the same (Negative)",
+      "status": "passed",
+      "duration": 15587,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 15587,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_005",
+      "requirementId": "REQ_BUS_02",
+      "title": "Verify source city auto-suggestions are displayed while entering source city (Positive)",
+      "status": "passed",
+      "duration": 11006,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 11006,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_006",
+      "requirementId": "REQ_BUS_02",
+      "title": "Verify destination city auto-suggestions are displayed while entering destination city (Positive)",
+      "status": "passed",
+      "duration": 10333,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 10333,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_007",
+      "requirementId": "REQ_BUS_02",
+      "title": "Verify warning message when source and destination cities are the same (Negative)",
+      "status": "passed",
+      "duration": 14708,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 14708,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_008",
+      "requirementId": "REQ_BUS_03",
+      "title": "Apply AC filter and verify only AC buses are displayed (Positive)",
+      "status": "passed",
+      "duration": 15103,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 15103,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_009",
+      "requirementId": "REQ_BUS_03",
+      "title": "Apply multiple filters (AC + Seater + Single Seat) and verify the appropriate validation message is displayed (Negative)",
+      "status": "passed",
+      "duration": 24010,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 24010,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    },
+    {
+      "id": "TC_BUS_010",
+      "requirementId": "REQ_BUS_04",
+      "title": "Enter an invalid mobile number and verify the validation message is displayed (Negative)",
+      "status": "passed",
+      "duration": 59950,
+      "retryCount": 0,
+      "error": "",
+      "stack": "",
+      "attachments": [],
+      "attempts": [
+        {
+          "status": "passed",
+          "duration": 59950,
+          "retry": 0,
+          "error": "",
+          "attachments": []
+        }
+      ]
+    }
+  ]
+}

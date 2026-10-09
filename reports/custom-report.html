@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MakeMyTrip Bus Automation - Execution Report</title>
+<style>
+:root{font:15px/1.5 system-ui,"Segoe UI",sans-serif;color:#182230;background:#f3f6fa}
+*{box-sizing:border-box}body{margin:0}main{max-width:1200px;margin:auto;padding:28px 20px 50px}
+header{background:#123b69;color:white;border-radius:14px;padding:24px}h1{margin:0 0 8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:18px 0}
+.card,.panel{background:white;border:1px solid #dce3eb;border-radius:10px;padding:15px}
+.card strong{display:block;font-size:25px}.muted{color:#58677a}.controls{display:flex;gap:10px;align-items:center;margin:18px 0}
+input,select{font:inherit;padding:9px;border:1px solid #aab7c5;border-radius:7px}input{flex:1;min-width:220px}
+.panel{margin-top:18px;overflow:auto}table{width:100%;border-collapse:collapse;text-align:left}th,td{padding:9px;border-bottom:1px solid #dce3eb;vertical-align:top}
+.badge{padding:2px 8px;border-radius:20px;font-weight:650;text-transform:capitalize}.passed{color:#126238;background:#e4f5eb}
+.failed{color:#a32323;background:#fde8e8}.skipped{color:#5c6572;background:#edf0f4}.flaky{color:#885400;background:#fff1d5}
+.blocked{color:#754500;background:#ffebcc}.error{max-width:340px;overflow-wrap:anywhere;white-space:pre-wrap}pre{white-space:pre-wrap;overflow-wrap:anywhere}
+a{color:#1459a6}.empty{padding:16px;color:#58677a}
+@media(max-width:650px){main{padding:12px}table{font-size:13px}.controls{align-items:stretch;flex-wrap:wrap}}
+</style></head><body><main>
+<header><h1>MakeMyTrip Bus Automation</h1><div>Browser: <strong id="browser"></strong> · Run status: <strong id="runStatus"></strong></div>
+<div>Started: <span id="started"></span> · Ended: <span id="ended"></span> · Duration: <span id="duration"></span></div></header>
+<section class="cards" id="summary" aria-label="Execution summary"></section>
+<div class="controls"><label for="search">Search tests</label><input id="search" type="search" placeholder="Test ID, requirement, title, or error">
+<label for="filter">Status</label><select id="filter"><option value="all">All statuses</option><option>passed</option><option>failed</option>
+<option>skipped</option><option>flaky</option><option>blocked</option></select></div>
+<section class="panel"><h2>Test details</h2><div id="results"></div></section>
+<p class="muted">Pass percentage = stable passes / (stable passes + failed + flaky tests). Skipped and blocked tests are excluded.</p>
+</main><script>
+const report={"project":"MakeMyTrip Bus Automation","browser":"Microsoft Edge","startTime":"2026-10-09T17:31:47.071Z","endTime":"2026-10-09T17:35:05.473Z","durationMs":198402,"status":"passed","summary":{"total":10,"passed":10,"failed":0,"skipped":0,"flaky":0,"blocked":0,"passPercentage":"100.0%"},"tests":[{"id":"TC_BUS_001","requirementId":"REQ_BUS_01","title":"Search bus with valid source city, destination city, and future travel date","status":"passed","duration":19024,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":19024,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_002","requirementId":"REQ_BUS_01","title":"Verify source city auto-suggestions are displayed while entering source city ","status":"passed","duration":11945,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":11945,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_003","requirementId":"REQ_BUS_01","title":"Verify destination city auto-suggestions are displayed while entering destination city ","status":"passed","duration":12969,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":12969,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_004","requirementId":"REQ_BUS_01","title":"Verify warning message when source and destination cities are the same (Negative)","status":"passed","duration":15587,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":15587,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_005","requirementId":"REQ_BUS_02","title":"Verify source city auto-suggestions are displayed while entering source city (Positive)","status":"passed","duration":11006,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":11006,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_006","requirementId":"REQ_BUS_02","title":"Verify destination city auto-suggestions are displayed while entering destination city (Positive)","status":"passed","duration":10333,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":10333,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_007","requirementId":"REQ_BUS_02","title":"Verify warning message when source and destination cities are the same (Negative)","status":"passed","duration":14708,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":14708,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_008","requirementId":"REQ_BUS_03","title":"Apply AC filter and verify only AC buses are displayed (Positive)","status":"passed","duration":15103,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":15103,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_009","requirementId":"REQ_BUS_03","title":"Apply multiple filters (AC + Seater + Single Seat) and verify the appropriate validation message is displayed (Negative)","status":"passed","duration":24010,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":24010,"retry":0,"error":"","attachments":[]}]},{"id":"TC_BUS_010","requirementId":"REQ_BUS_04","title":"Enter an invalid mobile number and verify the validation message is displayed (Negative)","status":"passed","duration":59950,"retryCount":0,"error":"","stack":"","attachments":[],"attempts":[{"status":"passed","duration":59950,"retry":0,"error":"","attachments":[]}]}]};
+const safe=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+for(const [id,value] of [['browser',report.browser],['runStatus',report.status],['started',report.startTime||'Not started'],
+['ended',report.endTime||'Not completed'],['duration',report.durationMs+' ms']])document.getElementById(id).textContent=value;
+const labels=[['total','Total'],['passed','Passed'],['failed','Failed'],['skipped','Skipped'],['flaky','Flaky'],['blocked','Blocked'],['passPercentage','Pass percentage']];
+document.getElementById('summary').innerHTML=labels.map(([key,label])=>'<div class="card"><strong>'+safe(report.summary[key])+'</strong><span>'+safe(label)+'</span></div>').join('');
+const results=document.getElementById('results');
+function render(){const query=document.getElementById('search').value.toLowerCase(),filter=document.getElementById('filter').value;
+const tests=report.tests.filter(t=>(filter==='all'||t.status===filter)&&JSON.stringify(t).toLowerCase().includes(query));
+results.innerHTML=tests.length?'<table><thead><tr><th>Test ID</th><th>Requirement</th><th>Test title</th><th>Status</th><th>Duration</th><th>Retries</th><th>Failure / stack</th><th>Artifacts</th></tr></thead><tbody>'+
+tests.map(t=>'<tr><td>'+safe(t.id)+'</td><td>'+safe(t.requirementId)+'</td><td>'+safe(t.title)+'</td><td><span class="badge '+safe(t.status)+'">'+safe(t.status)+'</span></td><td>'+safe(t.duration)+' ms</td><td>'+safe(t.retryCount)+'</td><td class="error">'+
+(t.error?'<details><summary>'+safe(t.error)+'</summary><pre>'+safe(t.stack)+'</pre></details>':'—')+'</td><td>'+t.attachments.map(a=>'<a href="'+safe(a.href)+'">'+safe(a.name)+'</a>').join('<br>')+'</td></tr>').join('')+
+'</tbody></table>':'<div class="empty">No test results match the selected filters.</div>'}
+document.getElementById('search').addEventListener('input',render);document.getElementById('filter').addEventListener('change',render);render();
+</script></body></html>
